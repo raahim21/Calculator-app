@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style (1).css">
+  <title>Frontend Mentor | Calculator app</title>
+
+  
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+    <h3>calc</h3>
+  <div class="backend" id="calc"></div>
+
+  <div class="calc-body">
+    <div class="btn" id="b7">
+      <div class="row"><button class="btq">
+        7
+      </button>
+    </div>
+      <div class="row" id="b8">
+        <button class="btq">
+          8
+        </button>
+      </div>
+      <div class="row" id="b9">
+        <button class="btq">
+        9
+      </button>
+    </div>
+      <div class="row">
+        <button class="btq-err" id="del-btn">
+          Del
+        </button>
+      </div>
+    </div>
+
+    <div class="btn" id="b4">
+      <div class="row"><button class="btq">
+        4
+      </button>
+    </div>
+      <div class="row" id="b5">
+        <button class="btq">
+          5
+        </button>
+      </div>
+      <div class="row" id="b6">
+        <button class="btq">
+        6
+      </button>
+    </div>
+      <div class="row">
+        <button class="btq">
+          +
+        </button>
+      </div>
+    </div>
+    <div class="btn" id="b1">
+      <div class="row"><button class="btq">
+        1
+      </button>
+    </div>
+      <div class="row" id="b2">
+        <button class="btq">
+          2
+        </button>
+      </div>
+      <div class="row" id="b3">
+        <button class="btq">
+        3
+      </button>
+    </div>
+      <div class="row">
+        <button class="btq">
+          -
+        </button>
+      </div>
+    </div>
+    <div class="btn">
+      <div class="row"><button class="btq">
+        .
+      </button>
+    </div>
+      <div class="row">
+        <button class="btq">
+          0
+        </button>
+      </div>
+      <div class="row">
+        <button class="btq">
+        x
+      </button>
+    </div>
+    <div class="row"><button class="btq">
+      /
+    </button>
+  </div>      
+    </div>
+
+    <div class="btn" id="last-row">
+      <div class="row2">
+        <button class="btq" id="reset">
+        reset
+      </button>
+    </div>
+    <div class="row2">
+      <button class="btq1" id="q">
+        =
+      </button>
+    </div>
+    </div>
+  </div>
+    
+
+
+</body>
+<script>
+  let del1 = document.getElementById('del-btn')
+  let q = document.getElementById('q')
+  let str = "";
+  let buttons = document.querySelectorAll('.btq');
+  let calc = document.querySelector('#calc')
+  buttons.forEach(element => {
+    element.addEventListener('click', ()=>{
+      str += element.innerHTML;
+      calc.innerHTML = str
+    })
+  });
+  q.addEventListener('click', function(){
+    let r = document.getElementById('calc')
+    console.log(r.innerText)
+    let y = r.innerText
+    r.innerText = eval(y.replaceAll(" ", ''))
+
+    })
+  
+  del1.addEventListener('click', function(){
+    calc.innerHTML = ''
+    str = ''
+  })
+
+</script>
+</html>
